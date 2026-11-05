@@ -33,3 +33,14 @@ L’identité repose sur le nom et le prénom déclarés, sans compte vérifié 
 
 Avec Node.js 22 ou plus récent : `npm install`, puis `npm test` et `npm run build`.
 Pour une prévisualisation avec les services Netlify, utiliser Netlify CLI et `netlify dev` après avoir configuré un mot de passe local dans un fichier `.env` non partagé. La validation finale de l’enregistrement et du mot de passe doit être faite sur votre site déployé.
+
+
+## Mise à jour : suivi progressif et envoi automatique
+
+Le bouton Suivant est actif seulement lorsqu’au moins une réponse est sélectionnée. Il valide les choix de la question courante, pour les QCS comme pour les QCM. Une modification de la réponse annule sa validation jusqu’au prochain clic sur Suivant. Le clic sur Suivant de la dernière question envoie automatiquement la copie si toutes les questions ont été validées. Sinon, utiliser les numéros pour revenir aux questions non validées, puis cliquer sur Suivant pour chacune. Le bouton Terminer est supprimé. La copie est envoyée automatiquement après validation de toutes les questions ou lorsque le temps expire. En cas d’échec de cet envoi automatique, une nouvelle tentative est effectuée après 5 secondes tant que la page reste ouverte.
+
+Les réponses et la position sont sauvegardées après une courte temporisation à chaque modification. Elles deviennent visibles dans le tableau formateur, même avant la fin du quiz. Une copie est mise à jour sous le même identifiant : elle n’est pas ajoutée plusieurs fois. Le tableau est actualisé toutes les 10 secondes lorsqu’il est ouvert. Les notes en cours sont provisoires. La moyenne et les taux de réussite sont calculés sur les copies terminées ; les exports incluent aussi les copies en cours avec leur état et leur progression.
+
+La rubrique Réussite par question affiche désormais l’énoncé complet et les bonnes réponses avec leur texte. Le détail individuel affiche également le texte de la question, la réponse choisie et le corrigé. Les corrigés sont réservés au formateur et aux copies terminées côté étudiant.
+
+Pour installer cette mise à jour : remplacer les fichiers du projet dans le même dépôt GitHub, en conservant tous les dossiers. Netlify redéploie après validation des modifications. Garder le même site Netlify et sa variable ADMIN_PASSWORD pour conserver l’accès et les données existantes. Aucun changement de nom du stockage n’est effectué. Actualiser le navigateur après publication.

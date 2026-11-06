@@ -1,0 +1,24 @@
+{
+  "name": "quizpharma-cloudflare",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-11-06",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "vars": {
+    "ASSET_HASHES": {
+      "/index.html": "d8b9c5a625633db90f096cd501621739785f40af79ce1e3ba1a8a6fbe6636ee2",
+      "/static/style.css": "35f3298c8b286f6ff854d2be7cc5c97aac587e5098c1b5e0b2cd56445d224b65",
+      "/static/app.js": "14b8f04ae44277a7bd4d999377dece61e90f75e4b9cc97808f449d14669a2800"
+    }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "quizpharma-cloudflare",
+      "database_id": "REMPLACER_PAR_ID_D1"
+    }
+  ]
+}
